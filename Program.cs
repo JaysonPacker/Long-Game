@@ -28,7 +28,8 @@
 
             // read the first line of the file which should say score if it already existed
             line = sr.ReadLine();
-            //if there exist a line in the file already (i.e it was just made) read read the second line turn it into an int and assign that value to score
+            //if there exist a line in the file already (i.e it was just made) read
+            //read the second line turn it into an int and assign that value to score
             if (line != null)
             {               
                 score = Int32.Parse(sr.ReadLine());
@@ -57,7 +58,7 @@
             userFile.Close();
               // write the score to the file
             StreamWriter sw = new StreamWriter(path,false);
-            sw.WriteLine("Score");
+            sw.WriteLine($"Score for {userName}");
             sw.Write(score);
             sw.Close();
         }
