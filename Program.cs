@@ -21,22 +21,25 @@
             userName = Console.ReadLine();
             // make path to {username}.txt
             path = $@"..\userInfo\{userName}.txt";
-            // if the file exites the object opens it if not a new f
+            // if the file exites the object opens it if not a new file is created 
             FileStream userFile = new FileStream(path, FileMode.OpenOrCreate);
+            // make a stream reader object out of it
             StreamReader sr = new StreamReader(userFile);
-            // if there exist a file with the username use the score from that
+
+            // read the first line of the file which should say score if it already existed
             line = sr.ReadLine();
+            //if there exist a line in the file already (i.e it was just made) read read the second line turn it into an int and assign that value to score
             if (line != null)
             {               
                 score = Int32.Parse(sr.ReadLine());
                 Console.WriteLine("File Exists");
                 sr.Close();
             }
-
+        // let the user know the game has begun
             Console.WriteLine($"Your Current score: {score}");
-            Console.WriteLine("Let the game begin n/");
+            Console.WriteLine("Let the game begin");
             Console.WriteLine("Press Enter to end it");
-
+            // play controls game and is initialized as true
             while (play)
             {               
             // check for key pressed 
