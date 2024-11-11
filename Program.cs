@@ -43,6 +43,7 @@
             // play controls game and is initialized as true
             while (play)
             {               
+
             // check for key pressed 
                 if (Console.ReadKey().Key == ConsoleKey.Enter)// stop game if user preses enter
                 {
@@ -57,7 +58,7 @@
             }
             userFile.Close();
               // write the score to the file
-            StreamWriter sw = new StreamWriter(path,false);
+            StreamWriter sw = new StreamWriter(path,true);
             sw.WriteLine($"Score for {userName}");
             sw.Write(score);
             sw.Close();
